@@ -7,7 +7,7 @@ Console.OutputEncoding = Encoding.UTF8;
 
 Socket clientSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
-var endPoint = new IPEndPoint(IPAddress.Parse("91.238.103.107"), 8888);
+var endPoint = new IPEndPoint(IPAddress.Parse("91.238.103.107"), 2009);
 Console.WriteLine($"Search server {endPoint}");
 await clientSocket.ConnectAsync(endPoint);
 
