@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatServerAsyncSocket", "Ch
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatClientAsyncSocket", "ChatClientAsyncSocket\ChatClientAsyncSocket.csproj", "{8DF94481-17B7-48B8-A7E5-2A8702470CB0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatTcpListenear", "ChatTcpListenear\ChatTcpListenear.csproj", "{046AF616-958C-4B52-AB8D-9180E66583C6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatTcpClient", "ChatTcpClient\ChatTcpClient.csproj", "{539E4C27-C441-4C8A-9612-A9129247A403}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{8DF94481-17B7-48B8-A7E5-2A8702470CB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8DF94481-17B7-48B8-A7E5-2A8702470CB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8DF94481-17B7-48B8-A7E5-2A8702470CB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{046AF616-958C-4B52-AB8D-9180E66583C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{046AF616-958C-4B52-AB8D-9180E66583C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{046AF616-958C-4B52-AB8D-9180E66583C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{046AF616-958C-4B52-AB8D-9180E66583C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{539E4C27-C441-4C8A-9612-A9129247A403}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{539E4C27-C441-4C8A-9612-A9129247A403}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{539E4C27-C441-4C8A-9612-A9129247A403}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{539E4C27-C441-4C8A-9612-A9129247A403}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

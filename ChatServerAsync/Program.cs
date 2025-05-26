@@ -12,13 +12,15 @@ listener.Bind(ipEndPoint);
 listener.Listen(20);
 
 Console.WriteLine($"Сервер запущено {ipEndPoint}");
-while (true){
+while (true)
+{
     Socket client = await listener.AcceptAsync();
     clients.Add(client);
     _ = Task.Run(() => HandleClientAsync(client));
 }
 
-async Task HandleClientAsync(Socket client){
+async Task HandleClientAsync(Socket client)
+{
     byte[] buffer = new byte[1024];
     int bytesRead = await client.ReceiveAsync(buffer);
     string name = Encoding.UTF8.GetString(buffer, 0, bytesRead).Trim();
@@ -27,18 +29,24 @@ async Task HandleClientAsync(Socket client){
     Console.WriteLine(welcomeMessage);
 
     byte[] welcomeBytes = Encoding.UTF8.GetBytes(welcomeMessage);
-    foreach (var cl in clients){
-        if (cl != client){
-            try{
+    foreach (var cl in clients)
+    {
+        if (cl != client)
+        {
+            try
+            {
                 cl.Send(welcomeBytes);
             }
-            catch (SocketException){
+            catch (SocketException)
+            {
                 clients.Remove(cl);
             }
         }
     }
-    while (true){
-        try{
+    while (true)
+    {
+        try
+        {
             bytesRead = await client.ReceiveAsync(buffer);
             if (bytesRead == 0) break;
 
@@ -46,30 +54,39 @@ async Task HandleClientAsync(Socket client){
             Console.WriteLine(message);
 
             byte[] messageBytes = Encoding.UTF8.GetBytes(message);
-            foreach (var cl in clients){
-                if (cl != client){
-                    try{
+            foreach (var cl in clients)
+            {
+                if (cl != client)
+                {
+                    try
+                    {
                         cl.Send(messageBytes);
                     }
-                    catch (SocketException){
+                    catch (SocketException)
+                    {
                         clients.Remove(cl);
                     }
                 }
             }
         }
-        catch (SocketException){
+        catch (SocketException)
+        {
             break;
         }
     }
     string exitMessage = $"{name} покинув(ла) чат";
     Console.WriteLine(exitMessage);
     byte[] exitBytes = Encoding.UTF8.GetBytes(exitMessage);
-    foreach (var cl in clients){
-        if (cl != client){
-            try{
+    foreach (var cl in clients)
+    {
+        if (cl != client)
+        {
+            try
+            {
                 cl.Send(exitBytes);
             }
-            catch (SocketException){
+            catch (SocketException)
+            {
                 clients.Remove(cl);
             }
         }

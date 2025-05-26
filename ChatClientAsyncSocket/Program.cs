@@ -1,5 +1,5 @@
-﻿using System.Net;
-using System.Net.Sockets;
+﻿using System.Net.Sockets;
+using System.Net;
 using System.Text;
 
 Console.InputEncoding = Encoding.UTF8;
@@ -18,13 +18,15 @@ await clientSocket.SendAsync(Encoding.UTF8.GetBytes(name));
 _ = Task.Run(async () =>
 {
     byte[] buffer = new byte[1024];
-    while (true){
+    while (true)
+    {
         int bytes = await clientSocket.ReceiveAsync(buffer);
         if (bytes == 0) break;
         Console.WriteLine(Encoding.UTF8.GetString(buffer, 0, bytes));
     }
 });
-while (true){
+while (true)
+{
     string text = Console.ReadLine();
     if (text.ToLower() == "exit" || text.ToLower() == "вийти")
         break;
@@ -32,4 +34,3 @@ while (true){
     await clientSocket.SendAsync(data);
 }
 clientSocket.Close();
-
